@@ -1,0 +1,5 @@
+resources:
+- argo-app.yaml
+- argocd.yaml
+- cicd-app.yaml
+- tst-dev-app-taxi-app.yaml
