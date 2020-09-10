@@ -1,0 +1,3 @@
+resources:
+- demo-prod-environment.yaml
+- demo-prod-rolebinding.yaml

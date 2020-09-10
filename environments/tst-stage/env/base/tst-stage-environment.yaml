@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    app.openshift.io/vcs-uri: https://github.com/divyanshiGupta/gitops.git
-  creationTimestamp: null
-  name: tst-stage
-spec: {}
-status: {}

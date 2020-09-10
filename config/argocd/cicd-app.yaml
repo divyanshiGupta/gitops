@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: tst-cicd
+    namespace: demo-cicd
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -35,7 +35,7 @@ spec:
     kind: SealedSecret
   project: default
   source:
-    path: config/tst-cicd/overlays
+    path: config/demo-cicd/overlays
     repoURL: https://github.com/divyanshiGupta/gitops.git
   syncPolicy:
     automated:

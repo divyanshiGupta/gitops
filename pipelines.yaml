@@ -2,23 +2,8 @@ config:
   argocd:
     namespace: argocd
   pipelines:
-    name: tst-cicd
+    name: demo-cicd
 environments:
-- apps:
-  - name: app-bus
-    services:
-    - name: bus
-      source_url: https://github.com/divyanshiGupta/bus.git
-      webhook:
-        secret:
-          name: webhook-secret-new-env-bus
-          namespace: tst-cicd
-  name: new-env
-  pipelines:
-    integration:
-      bindings:
-      - github-push-binding
-      template: app-ci-template
 - apps:
   - name: app-taxi
     services:
@@ -26,19 +11,34 @@ environments:
       pipelines:
         integration:
           bindings:
-          - tst-dev-app-taxi-taxi-binding
+          - demo-dev-app-taxi-taxi-binding
           - github-push-binding
       source_url: https://github.com/divyanshiGupta/taxi.git
       webhook:
         secret:
-          name: webhook-secret-tst-dev-taxi
-          namespace: tst-cicd
-  name: tst-dev
+          name: webhook-secret-demo-dev-taxi
+          namespace: demo-cicd
+  name: demo-dev
   pipelines:
     integration:
       bindings:
       - github-push-binding
       template: app-ci-template
-- name: tst-stage
+- apps:
+  - name: app-bus
+    services:
+    - name: bus
+      source_url: https://github.com/divyanshiGupta/bus.git
+      webhook:
+        secret:
+          name: webhook-secret-demo-prod-bus
+          namespace: demo-cicd
+  name: demo-prod
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+- name: demo-stage
 gitops_url: https://github.com/divyanshiGupta/gitops.git
 version: 1
