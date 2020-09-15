@@ -4,6 +4,9 @@ metadata:
   creationTimestamp: null
   name: bus
   namespace: demo-dev
+  labels:
+    app.kubernetes.io/name: bus
+    app.kubernetes.io/part-of: app-bus
 spec:
   replicas: 1
   selector:
