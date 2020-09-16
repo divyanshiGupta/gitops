@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: null
-  name: demo-prod-app-bus
+  name: demo-prod-app-taxi
   namespace: argocd
 spec:
   destination:
@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: environments/demo-prod/apps/app-bus/base
+    path: environments/demo-prod/apps/app-taxi/base
     repoURL: https://github.com/divyanshiGupta/gitops.git
   syncPolicy:
     automated:

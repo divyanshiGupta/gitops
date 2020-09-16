@@ -22,15 +22,7 @@ environments:
       source_url: https://github.com/divyanshiGupta/bus.git
       webhook:
         secret:
-          name: webhook-secret-demo-prod-bus
-          namespace: demo-cicd
-  - name: app-bus
-    services:
-    - name: bus
-      source_url: https://github.com/divyanshiGupta/bus.git
-      webhook:
-        secret:
-          name: webhook-secret-demo-prod-bus
+          name: webhook-secret-demo-dev-bus
           namespace: demo-cicd
   name: demo-dev
   pipelines:
@@ -42,21 +34,11 @@ environments:
   - name: app-taxi
     services:
     - name: taxi
-      source_url: https://github.com/divyanshiGupta/taxi.git
       webhook:
         secret:
-          name: webhook-secret-demo-dev-taxi
+          name: webhook-secret-demo-prod-taxi
           namespace: demo-cicd
     - name: bus
-      source_url: https://github.com/divyanshiGupta/bus.git
-      webhook:
-        secret:
-          name: webhook-secret-demo-prod-bus
-          namespace: demo-cicd
-  - name: app-bus
-    services:
-    - name: bus
-      source_url: https://github.com/divyanshiGupta/bus.git
       webhook:
         secret:
           name: webhook-secret-demo-prod-bus
@@ -71,22 +53,15 @@ environments:
   - name: app-taxi
     services:
     - name: taxi
-      source_url: https://github.com/divyanshiGupta/taxi.git
       webhook:
         secret:
-          name: webhook-secret-demo-dev-taxi
+          name: webhook-secret-demo-stage-taxi
           namespace: demo-cicd
     - name: bus
-      source_url: https://github.com/divyanshiGupta/bus.git
       webhook:
         secret:
-          name: webhook-secret-demo-prod-bus
+          name: webhook-secret-demo-stage-bus
           namespace: demo-cicd
   name: demo-stage
-  pipelines:
-    integration:
-      bindings:
-      - github-push-binding
-      template: app-ci-template
 gitops_url: https://github.com/divyanshiGupta/gitops.git
 version: 1

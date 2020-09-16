@@ -3,9 +3,9 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app.kubernetes.io/name: bus2
+    app.kubernetes.io/name: bus
     app.kubernetes.io/part-of: app-taxi
-  name: bus2
+  name: bus
   namespace: demo-dev
 spec:
   ports:
@@ -14,7 +14,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app.kubernetes.io/name: bus2
+    app.kubernetes.io/name: bus
     app.kubernetes.io/part-of: app-taxi
 status:
   loadBalancer: {}
