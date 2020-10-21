@@ -25,7 +25,6 @@ environments:
           name: webhook-secret-demo-dev-bus
           namespace: demo-cicd
   name: demo-dev
-  cluster: https://console-openshift-console.apps.dev-svc-4.6-100107.devcluster.openshift.com
   pipelines:
     integration:
       bindings:
